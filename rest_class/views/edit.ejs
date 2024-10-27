@@ -7,7 +7,6 @@
 </head>
 <body>
     <h2>Edit your post</h2>
-    <h5>Username : @<%= post.username %></h5>
     <h5>Post id : <%= post.id %> </h5>
     <form action="/posts/<%= post.id %>?_method=PATCH" method="POST">
         <label for="username">Username:</label>
