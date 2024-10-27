@@ -66,15 +66,20 @@ app.patch('/posts/:id', (req, res) => {
 
 app.delete('/posts/:id', (req, res) => {
     let { id } = req.params;
-    posts = posts.filter(p => p.id !== id);
+    // posts = posts.filter(p => p.id !== id);
+    let new_posts = posts.filter(p => p.id !== id);
+    console.log(new_posts)
+    posts = new_posts
     res.redirect('/posts');
 });
 
 
 app.get('/posts/:id/edit', (req, res) => {
     let { id } = req.params;
-    let post = posts.find(p => p.id === id);
-    console.log(p.id);
+    // console.log(id)
+    // console.log(posts)
+    let post = posts.find(p => p.id == id);
+    console.log(post);
     
     res.render("edit.ejs", {post});
 });
